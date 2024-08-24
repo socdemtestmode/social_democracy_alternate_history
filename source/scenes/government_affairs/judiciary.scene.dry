@@ -12,9 +12,10 @@ The Judiciary is one of the most reactionary components of the government, along
 
 There is great demand in our membership for reforming the judiciary, although this may bring us into a collision course with our coalition allies.
 
-- @reform: Carry out substantial judicial reforms,
+- @reform: Carry out substantial judicial reforms.
 - @minor_reforms: Carry out minor judicial reforms.
-- @as_is: Leave the judiciary as it is.
+- @contrreform: Откатить судебные реформы.
+- @return: Leave the judiciary as it is.
 - @easy_discard
 
 @reform
@@ -30,5 +31,8 @@ on-arrival: democratization += 1; workers_spd += 3*(1-dissent) if democratizatio
 
 We try to remove the most obviously biased and corrupt jurists, while leaving most of the system intact. It is slow work reforming the judiciary.
 
-@as_is
-go-to: root
+@contrreform
+view-if: judicial_reform >= 2 and (nsdap_relation > 30 or dnvp_relation > 30) and center_strength > (left_strength + labor_strength) 
+on-arrival: judicial_reform -= 2; democratization -= 2; old_middle_spd += 2*(1-dissent); workers_spd -= 1; workers_spd -= 1 if democratization >= 1; workers_spd -= 1 if democratization >= 2; workers_spd -= 1 if democratization >= 3; pro_republic -= 4; coup_progress -= 1; coalition_dissent -= 1 if in_grand_coalition = 1; nsdap_relation += 3; dnvp_relation += 3; 
+
+Мы начали судебную контрреформу. Изменения в судопроизводстве утрачивают силу. Все расследования были прекращены, ранее отстраненные юристы возвращаются на прежние должности. 

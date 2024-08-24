@@ -22,14 +22,14 @@ title: Выступить с коммунистами.
 subtitle: Рейхсбаннер и Союз красных фронтовиков вместе дадут отпор правым. Это положит начало гражданской войне.
 unavailable-subtitle: У нас не хватит сил разгромить путчистов. 
 choose-if: ((rb_strength*rb_militancy) + (rfb_strength*rfb_militancy)) >= 200
-on-arrival: spd_prussia = 0; workers_spd -= 4; center_dissent += 15; neorevisionist_dissent += 15; kpd_relation += 25;
+on-arrival: spd_prussia = 0; workers_spd -= 4; center_dissent += 15; neorevisionist_dissent += 15; kpd_relation += 25; left_strength *= 1.1
 
 Угроза справа для нас куда опаснее и мы вынуждены поддержать коммунистов.
 
 Части рейхсвера и боевики Стального шлема уже окружают города, находящиеся под властью Советов, а штурмовики оказывают им поддержку. Начинется гржданская война, но ведь мы этого и хотели?
 
-- @defend_2: Гражданская война началась.
-- @surrender: Не вмешиваться.
+- @defend_2: Мы не остановимся перед гражданской войной.
+- @surrender: Отступить и не вмешиваться.
 - @nenashedelo
 
 @defend_2
@@ -39,7 +39,6 @@ on-arrival: resist_coup = 1; rb_militancy += 0.05; rfb_militancy += 0.15; rfb_st
 
 @surrender
 title: Не вмешиваться.
-subtitle: Не нагнетать эскалацию.
 view-if: spd_prussia = 1
 on-arrival: spd_prussia = 0; workers_kpd += 6; workers_spd -= 5; old_middle_spd -= 4; center_dissent += 10; neorevisionist_dissent += 10; rb_militancy -= 0.1; rb_strength -= 400; rfb_strength += 100; rfb_militancy += 0.35; sa_strength += 100; sh_strength += 10; old_middle_nsdap += 6; new_middle_nsdap += 2; kpd_relation += 5; left_dissent -= 5; left_strength += 5;
 
